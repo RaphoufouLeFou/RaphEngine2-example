@@ -7,6 +7,11 @@ RaphEngine2 example project
 
 TODO
 
+```shell
+cmake -B build
+cmake --build build
+```
+
 ## Windows
 
 To build the project, you need to execute these commands in the root directory.
