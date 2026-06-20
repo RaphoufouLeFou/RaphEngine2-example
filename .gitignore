@@ -2,6 +2,8 @@
 .cache
 .vscode
 
+RaphEngine2_example
+
 # Prerequisites
 *.d
 

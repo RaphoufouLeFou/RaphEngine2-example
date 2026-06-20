@@ -10,6 +10,11 @@ add_executable(RaphEngine2_example
 
 target_compile_features(RaphEngine2_example PRIVATE cxx_std_20)
 
+if(NOT WIN32)
+    target_compile_options(RaphEngine2_example PRIVATE -fsanitize=address -fno-omit-frame-pointer -g)
+    target_link_options(RaphEngine2_example PRIVATE -fsanitize=address)
+endif()
+
 # Link the engine librairy
 find_package(RaphEngine2 REQUIRED)
 target_link_libraries(RaphEngine2_example
