@@ -4,9 +4,13 @@ project(RaphEngine2_example LANGUAGES CXX)
 
 include(FetchContent)
 
-add_executable(RaphEngine2_example
-    src/main.cpp
+file(GLOB RaphEngine2_example_SRC
+     "src/*.cpp"
+     "src/*/*.cpp"
+     "src/*/*/*.cpp"
 )
+
+add_executable(RaphEngine2_example ${RaphEngine2_example_SRC})
 
 target_compile_features(RaphEngine2_example PRIVATE cxx_std_20)
 
