@@ -16,8 +16,18 @@ int main()
     Core::Init();
     GameObject go{};
 
-    go.add_component(std::make_unique<component::MeshComponent>(MeshInfo("assets/models/cube.fbx")));
+    go.add_component(std::make_unique<component::MeshComponent>(MeshInfo("assets/models/map.fbx")));
+    go.get_transform().get_scale() = glm::vec3(10);
+
     go.greed();
+
+    for (size_t i = 0; i < 10; i++)
+    {
+        GameObject* p = new GameObject{};
+        p->add_component(std::make_unique<component::MeshComponent>(MeshInfo("assets/models/Cube.fbx")));
+        p->get_transform().get_position() = glm::vec3(0, i * 5, 0);
+    }
+    
 
     Camera camera {};
 

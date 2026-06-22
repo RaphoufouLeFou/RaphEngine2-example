@@ -60,7 +60,7 @@ void Camera::Update()
     HandleMouseRotation();
 
     glm::vec3& pos = transform_.get_position();
-    glm::vec3& rot = transform_.get_rotation();
+    const glm::vec3& rot = transform_.get_rotation();
 
     glm::mat4 RotationMat = glm::toMat4(glm::quat(glm::radians(rot)));
     glm::vec3 movement = glm::vec3(0);
@@ -84,7 +84,4 @@ void Camera::Update()
     glm::vec3 direction = glm::vec3(RotationMat * glm::vec4(movement, 1));
 
     pos += direction;
-
-    printf("Camera rot : (%f, %f, %f), delta time is : %lf\n", rot.x, rot.y, rot.z, Time::deltaTime);
-    printf("Camera pos : (%f, %f, %f)\n", pos.x, pos.y, pos.z);
 }
