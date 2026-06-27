@@ -1,15 +1,14 @@
 #include "camera.hpp"
-#include <RaphEngine2/graphics/graphic_api.hpp>
-#include <RaphEngine2/inputs/mouse.hpp>
-#include <RaphEngine2/inputs/keyboard.hpp>
 
-#include <glm/gtx/quaternion.hpp>
+#include <RaphEngine2/graphics/graphic_api.hpp>
+#include <RaphEngine2/inputs/keyboard.hpp>
+#include <RaphEngine2/inputs/mouse.hpp>
+#include <RaphEngine2/time_utils.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+#include <glm/gtx/quaternion.hpp>
 
-#include <RaphEngine2/time_utils.hpp>
-
-float speed = 100;
+float speed = 10;
 
 using namespace raphEngine;
 using namespace raphEngine::inputs;
@@ -31,7 +30,8 @@ void Camera::HandleMouseRotation()
 
     glm::vec2 mousePos = Mouse::GetMousePos();
 
-    if(Mouse::IsMouseButtonPressed(Mouse::MouseButton::RIGHT) && Mouse::IsMouseOnScreen() && Mouse::IsWindowFocused())
+    if (Mouse::IsMouseButtonPressed(Mouse::MouseButton::RIGHT)
+        && Mouse::IsMouseOnScreen() && Mouse::IsWindowFocused())
     {
         glm::vec2 MiddleScreen = glm::vec2(WindowWidth / 2, WindowHeight / 2);
         if (!lastMouseState)
@@ -47,7 +47,7 @@ void Camera::HandleMouseRotation()
     else
     {
         Mouse::SetMouseVisibility(true);
-        if(lastMouseState)
+        if (lastMouseState)
             Mouse::SetMousePosition(lastMousePos.x, lastMousePos.y);
         lastMousePos = mousePos;
         lastMouseState = false;
@@ -56,7 +56,6 @@ void Camera::HandleMouseRotation()
 
 void Camera::Update()
 {
-
     HandleMouseRotation();
 
     glm::vec3& pos = transform_.get_position();
@@ -67,18 +66,18 @@ void Camera::Update()
 
     float multiplier = 1;
 
-    if(Key::IsKeyPressed(Key::KeyCode::KEY_LEFT_SHIFT))
+    if (Key::IsKeyPressed(Key::KeyCode::KEY_LEFT_SHIFT))
         multiplier = 15;
-    if(Key::IsKeyPressed(Key::KeyCode::KEY_LEFT_CONTROL))
+    if (Key::IsKeyPressed(Key::KeyCode::KEY_LEFT_CONTROL))
         multiplier = 0.1f;
 
-    if(Key::IsKeyPressed(Key::KeyCode::KEY_W))
+    if (Key::IsKeyPressed(Key::KeyCode::KEY_W))
         movement.y += speed * multiplier * Time::deltaTime;
-    if(Key::IsKeyPressed(Key::KeyCode::KEY_S))
+    if (Key::IsKeyPressed(Key::KeyCode::KEY_S))
         movement.y -= speed * multiplier * Time::deltaTime;
-    if(Key::IsKeyPressed(Key::KeyCode::KEY_D))
+    if (Key::IsKeyPressed(Key::KeyCode::KEY_D))
         movement.x += speed * multiplier * Time::deltaTime;
-    if(Key::IsKeyPressed(Key::KeyCode::KEY_A))
+    if (Key::IsKeyPressed(Key::KeyCode::KEY_A))
         movement.x -= speed * multiplier * Time::deltaTime;
 
     glm::vec3 direction = glm::vec3(RotationMat * glm::vec4(movement, 1));
