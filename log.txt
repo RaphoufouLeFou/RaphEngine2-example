@@ -1,58 +1,58 @@
-[DEBUG] 22:02:08 == Hello world from RaphEngine2!
-[DEBUG] 22:02:08 == Settings loaded: settings.json
-[DEBUG] 22:02:08 == starting with a resolution of 1920x1080
-[DEBUG] 22:02:08 == compiling a shader
-[DEBUG] 22:02:08 == adding Render mesh
-[LOG  ] 22:02:08 == Hello, my name is "New GameObject 0"
-[DEBUG] 22:02:08 == compiling a shader
-[DEBUG] 22:02:08 == initializing mesh with 1 lods
-[DEBUG] 22:02:08 == adding Render mesh
-[DEBUG] 22:02:08 == compiling a shader
-[DEBUG] 22:02:08 == initializing mesh with 1 lods
-[DEBUG] 22:02:08 == adding Render mesh
-[DEBUG] 22:02:08 == compiling a shader
-[DEBUG] 22:02:08 == initializing mesh with 1 lods
-[DEBUG] 22:02:08 == adding Render mesh
-[DEBUG] 22:02:08 == compiling a shader
-[DEBUG] 22:02:08 == initializing mesh with 1 lods
-[DEBUG] 22:02:08 == adding Render mesh
-[DEBUG] 22:02:08 == compiling a shader
-[DEBUG] 22:02:08 == initializing mesh with 1 lods
-[DEBUG] 22:02:08 == adding Render mesh
-[DEBUG] 22:02:08 == compiling a shader
-[DEBUG] 22:02:08 == initializing mesh with 1 lods
-[DEBUG] 22:02:08 == adding Render mesh
-[DEBUG] 22:02:08 == compiling a shader
-[DEBUG] 22:02:08 == initializing mesh with 1 lods
-[DEBUG] 22:02:08 == adding Render mesh
-[DEBUG] 22:02:08 == compiling a shader
-[DEBUG] 22:02:08 == initializing mesh with 1 lods
-[DEBUG] 22:02:08 == adding Render mesh
-[DEBUG] 22:02:08 == compiling a shader
-[DEBUG] 22:02:08 == initializing mesh with 1 lods
-[DEBUG] 22:02:08 == adding Render mesh
-[DEBUG] 22:02:08 == compiling a shader
-[DEBUG] 22:02:08 == initializing mesh with 1 lods
-[DEBUG] 22:02:08 == adding Render mesh
-[DEBUG] 22:02:08 == creating camera
-[DEBUG] 22:02:08 == adding Camera
-[LOG  ] 22:02:08 == test
-[DEBUG] 22:02:08 == running now from RaphEngine2!
-[DEBUG] 22:02:08 == loading new mesh for New GameObject 0
-[DEBUG] 22:02:08 == Texture loaded at path: assets/textures/f568080192.png
-[DEBUG] 22:02:08 == loading new mesh for New GameObject 2
-[DEBUG] 22:02:08 == Texture loaded at path: assets/textures/red_brick_diff_2k.jpg
-[DEBUG] 22:02:09 == Texture loaded at path: assets/textures/red_brick_nor_gl_2k.png
-[DEBUG] 22:02:09 == loading new mesh for New GameObject 3
-[DEBUG] 22:02:09 == loading new mesh for New GameObject 4
-[DEBUG] 22:02:09 == loading new mesh for New GameObject 5
-[DEBUG] 22:02:09 == loading new mesh for New GameObject 6
-[DEBUG] 22:02:09 == loading new mesh for New GameObject 7
-[DEBUG] 22:02:09 == loading new mesh for New GameObject 8
-[DEBUG] 22:02:09 == loading new mesh for New GameObject 9
-[DEBUG] 22:02:09 == loading new mesh for New GameObject 10
-[DEBUG] 22:02:09 == loading new mesh for New GameObject 11
-[DEBUG] 22:02:09 == compiling a shader
-[DEBUG] 22:02:09 == compiling a shader
-[DEBUG] 22:03:05 == Settings saved: settings.json
-[DEBUG] 22:03:05 == exiting now!
+[DEBUG] 21:01:30 == Hello world from RaphEngine2!
+[DEBUG] 21:01:30 == Settings loaded: settings.json
+[DEBUG] 21:01:31 == starting with a resolution of 1920x1080
+[DEBUG] 21:01:31 == compiling a shader
+[DEBUG] 21:01:31 == adding Render mesh
+[LOG  ] 21:01:31 == Hello, my name is "New GameObject 0"
+[DEBUG] 21:01:31 == compiling a shader
+[DEBUG] 21:01:31 == initializing mesh with 1 lods
+[DEBUG] 21:01:31 == adding Render mesh
+[DEBUG] 21:01:31 == compiling a shader
+[DEBUG] 21:01:31 == initializing mesh with 1 lods
+[DEBUG] 21:01:31 == adding Render mesh
+[DEBUG] 21:01:31 == compiling a shader
+[DEBUG] 21:01:31 == initializing mesh with 1 lods
+[DEBUG] 21:01:31 == adding Render mesh
+[DEBUG] 21:01:31 == compiling a shader
+[DEBUG] 21:01:31 == initializing mesh with 1 lods
+[DEBUG] 21:01:31 == adding Render mesh
+[DEBUG] 21:01:31 == compiling a shader
+[DEBUG] 21:01:31 == initializing mesh with 1 lods
+[DEBUG] 21:01:31 == adding Render mesh
+[DEBUG] 21:01:31 == compiling a shader
+[DEBUG] 21:01:31 == initializing mesh with 1 lods
+[DEBUG] 21:01:31 == adding Render mesh
+[DEBUG] 21:01:31 == compiling a shader
+[DEBUG] 21:01:31 == initializing mesh with 1 lods
+[DEBUG] 21:01:31 == adding Render mesh
+[DEBUG] 21:01:31 == compiling a shader
+[DEBUG] 21:01:31 == initializing mesh with 1 lods
+[DEBUG] 21:01:31 == adding Render mesh
+[DEBUG] 21:01:31 == compiling a shader
+[DEBUG] 21:01:31 == initializing mesh with 1 lods
+[DEBUG] 21:01:31 == adding Render mesh
+[DEBUG] 21:01:31 == compiling a shader
+[DEBUG] 21:01:31 == initializing mesh with 1 lods
+[DEBUG] 21:01:31 == adding Render mesh
+[DEBUG] 21:01:31 == creating camera
+[DEBUG] 21:01:31 == adding Camera
+[LOG  ] 21:01:31 == test
+[DEBUG] 21:01:31 == running now from RaphEngine2!
+[DEBUG] 21:01:31 == loading new mesh for New GameObject 0
+[DEBUG] 21:01:31 == Texture loaded at path: assets/textures/f568080192.png
+[DEBUG] 21:01:31 == loading new mesh for New GameObject 2
+[DEBUG] 21:01:31 == Texture loaded at path: assets/textures/red_brick_diff_2k.jpg
+[DEBUG] 21:01:31 == Texture loaded at path: assets/textures/red_brick_nor_gl_2k.png
+[DEBUG] 21:01:31 == loading new mesh for New GameObject 3
+[DEBUG] 21:01:31 == loading new mesh for New GameObject 4
+[DEBUG] 21:01:31 == loading new mesh for New GameObject 5
+[DEBUG] 21:01:31 == loading new mesh for New GameObject 6
+[DEBUG] 21:01:31 == loading new mesh for New GameObject 7
+[DEBUG] 21:01:31 == loading new mesh for New GameObject 8
+[DEBUG] 21:01:31 == loading new mesh for New GameObject 9
+[DEBUG] 21:01:31 == loading new mesh for New GameObject 10
+[DEBUG] 21:01:31 == loading new mesh for New GameObject 11
+[DEBUG] 21:01:31 == compiling a shader
+[DEBUG] 21:01:31 == compiling a shader
+[DEBUG] 21:02:54 == Settings saved: settings.json
+[DEBUG] 21:02:54 == exiting now!

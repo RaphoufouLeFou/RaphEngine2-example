@@ -1,8 +1,10 @@
 {
     "Graphics": {
+        "AA": 8,
         "Api": "OpenGL",
         "Fullscreen": false,
         "Resolution": "1920x1080",
-        "Shadow": "High"
+        "Shadow": "High",
+        "vSync": true
     }
 }

@@ -21,27 +21,6 @@ if(RAPHENGINE2_EXAMPLE_ENABLE_ASAN AND NOT WIN32)
     target_link_options(RaphEngine2_example PRIVATE -fsanitize=address)
 endif()
 
-# Link the engine librairy
-find_package(RaphEngine2 REQUIRED)
-target_link_libraries(RaphEngine2_example
-    PRIVATE
-        RaphEngine2::RaphEngine2
-)
-
-target_include_directories(RaphEngine2_example PUBLIC
-    $<BUILD_INTERFACE:${RaphEngine2_SOURCE_DIR}/include>
-    $<BUILD_INTERFACE:${RaphEngine2_SOURCE_DIR}/include/RaphEngine2>
-
-)
-
-# Copies the DLL into the same folder as the executable for win builds
-if(WIN32)
-    add_custom_command(TARGET RaphEngine2_example POST_BUILD
-        COMMAND ${CMAKE_COMMAND} -E copy_if_different
-            $<TARGET_FILE:RaphEngine2::RaphEngine2>
-            $<TARGET_FILE_DIR:RaphEngine2_example>
-    )
-endif()
 
 # ============
 # dependencies 
@@ -78,3 +57,29 @@ else()
 endif()
 
 target_link_libraries(RaphEngine2_example PRIVATE glm::glm)
+
+set(nlohmann_json_DIR
+    "${nlohmann_json_BINARY_DIR}"
+)
+
+# Link the engine librairy
+find_package(RaphEngine2 REQUIRED)
+target_link_libraries(RaphEngine2_example
+    PRIVATE
+        RaphEngine2::RaphEngine2
+)
+
+target_include_directories(RaphEngine2_example PUBLIC
+    $<BUILD_INTERFACE:${RaphEngine2_SOURCE_DIR}/include>
+    $<BUILD_INTERFACE:${RaphEngine2_SOURCE_DIR}/include/RaphEngine2>
+
+)
+
+# Copies the DLL into the same folder as the executable for win builds
+if(WIN32)
+    add_custom_command(TARGET RaphEngine2_example POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+            $<TARGET_FILE:RaphEngine2::RaphEngine2>
+            $<TARGET_FILE_DIR:RaphEngine2_example>
+    )
+endif()
