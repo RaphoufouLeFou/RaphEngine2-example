@@ -2,6 +2,8 @@
 .cache
 .vscode
 
+log.txt
+
 RaphEngine2_example
 
 # Prerequisites

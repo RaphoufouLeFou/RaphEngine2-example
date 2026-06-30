@@ -1,7 +1,9 @@
 #include <RaphEngine2/RaphEngine2.hpp>
 #include <RaphEngine2/component/camera_component.hpp>
+#include <RaphEngine2/component/light_component.hpp>
 #include <RaphEngine2/component/mesh_component.hpp>
 #include <RaphEngine2/logger/logger.hpp>
+#include <glm/glm.hpp>
 #include <initializer_list>
 #include <iostream>
 #include <memory>
@@ -36,12 +38,8 @@ int main()
     go.greed();
     GameObject* light = new GameObject{};
 
-    /*
-        light->add_component<component::MeshComponent>(
-            MeshInfo("assets/models/Ball.fbx", false));
-    */
-    light->get_transform().get_position() = glm::vec3(1 * 10, 1 * 10, 1 * 10);
-    light->get_transform().get_scale() = glm::vec3(0.1);
+    auto lc = light->add_component<component::LightComponent>();
+    lc->set_direction(glm::vec3(1));
 
     for (size_t i = 0; i < 10; i++)
     {
