@@ -5,9 +5,6 @@
 #include <RaphEngine2/logger/logger.hpp>
 #include <glm/glm.hpp>
 #include <initializer_list>
-#include <iostream>
-#include <memory>
-
 #include "Camera/camera.hpp"
 
 using namespace raphEngine;
@@ -23,7 +20,7 @@ int main()
     // add a new MeshComponent to it, to give it a 3d model.
     // If a single MeshInfo is given, there will be no Lods for this model
 
-    if (0)
+    if (false)
     {
         go.add_component<component::MeshComponent>(
             MeshInfo("assets/models/Plane.fbx"));
@@ -40,6 +37,10 @@ int main()
 
     auto lc = light->add_component<component::LightComponent>();
     lc->set_direction(glm::vec3(1));
+
+    light->add_component<component::MeshComponent>(
+        MeshInfo("assets/models/Ball.fbx"));
+    light->get_transform().get_scale() = glm::vec3(0.1);
 
     for (size_t i = 0; i < 10; i++)
     {

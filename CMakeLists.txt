@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.21.2)
 
 project(RaphEngine2_example LANGUAGES CXX)
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 include(FetchContent)
 
 file(GLOB RaphEngine2_example_SRC
