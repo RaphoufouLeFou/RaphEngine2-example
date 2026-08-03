@@ -1,8 +1,12 @@
 #include "camera.hpp"
 
+#include <RaphEngine2/component/mesh_component.hpp>
 #include <RaphEngine2/graphics/graphic_api.hpp>
 #include <RaphEngine2/inputs/keyboard.hpp>
 #include <RaphEngine2/inputs/mouse.hpp>
+#include <RaphEngine2/logger/logger.hpp>
+#include <RaphEngine2/objects/game_object.hpp>
+#include <RaphEngine2/raycast/raycast.hpp>
 #include <RaphEngine2/time_utils.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
@@ -12,11 +16,16 @@ float speed = 10;
 
 using namespace raphEngine;
 using namespace raphEngine::inputs;
+using namespace raphEngine::objects;
+
+GameObject poi{};
 
 void Camera::Start()
 {
     transform_.get_position() = glm::vec3(0, 0, 2.6f);
     transform_.get_rotation() = glm::vec3(0, 0, 0);
+
+    // poi.add_component<component::MeshComponent>(MeshInfo("assets/models/Ball.fbx"));
 }
 
 glm::vec2 lastMousePos = glm::vec2(-1, -1);
@@ -83,4 +92,26 @@ void Camera::Update()
     glm::vec3 direction = glm::vec3(RotationMat * glm::vec4(movement, 1));
 
     pos += direction;
+
+    static bool last_pressed = false; 
+
+    if(!inputs::Mouse::IsMouseButtonPressed(raphEngine::inputs::Mouse::MouseButton::LEFT))
+    {
+        last_pressed = false;
+        return;
+    }
+    if (last_pressed)
+        return;
+
+    last_pressed = true;
+
+    RayInfo OutRayInfo;
+
+    Logger::LogInfo("Here !!!");
+    if(RayCast::FromMouse(&OutRayInfo))
+    {
+        Logger::LogInfo("Hit on ", OutRayInfo.hitObject->get_name());
+        poi.get_transform().get_position() = OutRayInfo.hitPoint;
+    }
+
 }

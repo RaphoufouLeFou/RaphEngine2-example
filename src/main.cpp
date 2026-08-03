@@ -23,9 +23,7 @@ int main()
     if (false)
     {
         go.add_component<component::MeshComponent>(
-            MeshInfo("assets/models/Plane.fbx"));
-        go.get_first_component_of_type<component::MeshComponent>()
-            ->cast_shadows = false;
+            MeshInfo("assets/models/Plane.fbx"))->cast_shadows = false;
     }
     else
     {
@@ -38,11 +36,12 @@ int main()
     auto lc = light->add_component<component::LightComponent>();
     lc->set_direction(glm::vec3(1));
 
+    /*
     light->add_component<component::MeshComponent>(
         MeshInfo("assets/models/Ball.fbx"));
     light->get_transform().get_scale() = glm::vec3(0.1);
-
-    for (size_t i = 0; i < 10; i++)
+*/
+    for (size_t i = 0; i < 1; i++)
     {
         GameObject* p = new GameObject{};
 

@@ -16,7 +16,7 @@ add_executable(RaphEngine2_example ${RaphEngine2_example_SRC})
 
 target_compile_features(RaphEngine2_example PRIVATE cxx_std_20)
 
-option(RAPHENGINE2_EXAMPLE_ENABLE_ASAN "Build RaphEngine2 with AddressSanitizer" OFF)
+option(RAPHENGINE2_EXAMPLE_ENABLE_ASAN "Build RaphEngine2 with AddressSanitizer" ON)
 
 if(RAPHENGINE2_EXAMPLE_ENABLE_ASAN AND NOT WIN32)
     target_compile_options(RaphEngine2_example PRIVATE -fsanitize=address -fno-omit-frame-pointer -g)
