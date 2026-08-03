@@ -18,14 +18,16 @@ using namespace raphEngine;
 using namespace raphEngine::inputs;
 using namespace raphEngine::objects;
 
-GameObject poi{};
+GameObject* poi = new GameObject{ "ball" };
 
 void Camera::Start()
 {
+    Logger::LogInfo("Starting camera");
     transform_.get_position() = glm::vec3(0, 0, 2.6f);
     transform_.get_rotation() = glm::vec3(0, 0, 0);
 
-    // poi.add_component<component::MeshComponent>(MeshInfo("assets/models/Ball.fbx"));
+          poi->add_component<component::MeshComponent>(
+              MeshInfo("assets/models/Ball.fbx"));
 }
 
 glm::vec2 lastMousePos = glm::vec2(-1, -1);
@@ -111,7 +113,7 @@ void Camera::Update()
     if(RayCast::FromMouse(&OutRayInfo))
     {
         Logger::LogInfo("Hit on ", OutRayInfo.hitObject->get_name());
-        poi.get_transform().get_position() = OutRayInfo.hitPoint;
+        poi->get_transform().get_position() = OutRayInfo.hitPoint;
     }
 
 }

@@ -5,6 +5,7 @@
 #include <RaphEngine2/logger/logger.hpp>
 #include <glm/glm.hpp>
 #include <initializer_list>
+
 #include "Camera/camera.hpp"
 
 using namespace raphEngine;
@@ -15,7 +16,7 @@ int main()
     Core::Init("RaphEngine2-example");
 
     // create a simple GameObject
-    GameObject go{};
+    GameObject go{ "Map" };
 
     // add a new MeshComponent to it, to give it a 3d model.
     // If a single MeshInfo is given, there will be no Lods for this model
@@ -23,7 +24,8 @@ int main()
     if (false)
     {
         go.add_component<component::MeshComponent>(
-            MeshInfo("assets/models/Plane.fbx"))->cast_shadows = false;
+              MeshInfo("assets/models/Plane.fbx"))
+            ->cast_shadows = false;
     }
     else
     {
@@ -31,7 +33,7 @@ int main()
             MeshInfo("assets/models/map.fbx"));
     }
     go.greed();
-    GameObject* light = new GameObject{};
+    GameObject* light = new GameObject{ "Directional light" };
 
     auto lc = light->add_component<component::LightComponent>();
     lc->set_direction(glm::vec3(1));
