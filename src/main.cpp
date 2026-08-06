@@ -43,7 +43,7 @@ int main()
         MeshInfo("assets/models/Ball.fbx"));
     light->get_transform().get_scale() = glm::vec3(0.1);
 */
-    for (size_t i = 0; i < 1; i++)
+    for (size_t i = 0; i < 2; i++)
     {
         GameObject* p = new GameObject{};
 
@@ -53,8 +53,8 @@ int main()
 
         p->add_component<component::MeshComponent>(lods);
 
-        p->get_transform().get_position() = glm::vec3(0, (float)i / 10.0, 1);
-        p->get_transform().get_scale() = glm::vec3(0.01);
+        p->get_transform().get_position() = glm::vec3(0, (float)i, 0);
+        p->get_transform().get_scale() = glm::vec3(1 + i);
         p->get_first_component_of_type<component::MeshComponent>()
             ->cast_shadows = true;
     }

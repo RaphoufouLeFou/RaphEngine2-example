@@ -26,8 +26,8 @@ void Camera::Start()
     transform_.get_position() = glm::vec3(0, 0, 2.6f);
     transform_.get_rotation() = glm::vec3(0, 0, 0);
 
-          poi->add_component<component::MeshComponent>(
-              MeshInfo("assets/models/Ball.fbx"));
+    poi->add_component<component::MeshComponent>(
+        MeshInfo("assets/models/Ball.fbx"));
 }
 
 glm::vec2 lastMousePos = glm::vec2(-1, -1);
@@ -95,9 +95,10 @@ void Camera::Update()
 
     pos += direction;
 
-    static bool last_pressed = false; 
+    static bool last_pressed = false;
 
-    if(!inputs::Mouse::IsMouseButtonPressed(raphEngine::inputs::Mouse::MouseButton::LEFT))
+    if (!inputs::Mouse::IsMouseButtonPressed(
+            raphEngine::inputs::Mouse::MouseButton::LEFT))
     {
         last_pressed = false;
         return;
@@ -110,10 +111,9 @@ void Camera::Update()
     RayInfo OutRayInfo;
 
     Logger::LogInfo("Here !!!");
-    if(RayCast::FromMouse(&OutRayInfo))
+    if (RayCast::FromMouse(&OutRayInfo))
     {
         Logger::LogInfo("Hit on ", OutRayInfo.hitObject->get_name());
         poi->get_transform().get_position() = OutRayInfo.hitPoint;
     }
-
 }
