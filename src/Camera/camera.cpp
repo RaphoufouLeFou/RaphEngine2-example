@@ -28,6 +28,7 @@ void Camera::Start()
 
     poi->add_component<component::MeshComponent>(
         MeshInfo("assets/models/Ball.fbx"));
+    poi->get_transform().get_scale() = glm::vec3(0.1);
 }
 
 glm::vec2 lastMousePos = glm::vec2(-1, -1);
@@ -109,8 +110,6 @@ void Camera::Update()
     last_pressed = true;
 
     RayInfo OutRayInfo;
-
-    Logger::LogInfo("Here !!!");
     if (RayCast::FromMouse(&OutRayInfo))
     {
         Logger::LogInfo("Hit on ", OutRayInfo.hitObject->get_name());

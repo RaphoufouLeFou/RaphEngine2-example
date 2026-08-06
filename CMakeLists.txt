@@ -28,6 +28,11 @@ endif()
 # dependencies 
 # ============
 
+
+find_package(TBB REQUIRED)
+target_link_libraries(RaphEngine2_example PUBLIC TBB::tbb)
+
+
 find_package(glm QUIET)
 
 if(NOT glm_FOUND)

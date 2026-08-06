@@ -1,5 +1,6 @@
 #include <RaphEngine2/RaphEngine2.hpp>
 #include <RaphEngine2/component/camera_component.hpp>
+#include <RaphEngine2/component/collider_component.hpp>
 #include <RaphEngine2/component/light_component.hpp>
 #include <RaphEngine2/component/mesh_component.hpp>
 #include <RaphEngine2/logger/logger.hpp>
@@ -29,8 +30,10 @@ int main()
     }
     else
     {
-        go.add_component<component::MeshComponent>(
+        const auto* c = go.add_component<component::MeshComponent>(
             MeshInfo("assets/models/map.fbx"));
+
+        go.add_component<component::ColliderComponent>(*c);
     }
     go.greed();
     GameObject* light = new GameObject{ "Directional light" };
@@ -51,10 +54,12 @@ int main()
             MeshInfo("assets/models/Cube.fbx"),
         };
 
-        p->add_component<component::MeshComponent>(lods);
+        const auto* c = p->add_component<component::MeshComponent>(lods);
+
+        p->add_component<component::ColliderComponent>(*c);
 
         p->get_transform().get_position() = glm::vec3(0, (float)i, 0);
-        p->get_transform().get_scale() = glm::vec3(1 + i);
+        p->get_transform().get_scale() = glm::vec3(0.1f + i);
         p->get_first_component_of_type<component::MeshComponent>()
             ->cast_shadows = true;
     }
