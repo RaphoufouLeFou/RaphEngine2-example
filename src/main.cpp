@@ -62,6 +62,8 @@ int main()
         p->get_transform().get_scale() = glm::vec3(0.1f + i);
         p->get_first_component_of_type<component::MeshComponent>()
             ->cast_shadows = true;
+
+        p->get_transform().set_parent(&go.get_transform());
     }
 
     Camera camera{};
